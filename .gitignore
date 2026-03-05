@@ -1,0 +1,30 @@
+# Environment and secrets
+.env
+*.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Build artifacts
+build/
+
+# Private keys / certificates
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+
+# Temp files
+*.tmp
+*.swp
+*~
+
+# Claude Code
+.claude/

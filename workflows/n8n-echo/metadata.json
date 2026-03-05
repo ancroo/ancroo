@@ -1,0 +1,17 @@
+{
+  "slug": "n8n-echo",
+  "name": "n8n Echo",
+  "description": "Sends selected text to n8n and echoes it back. A basic test to verify the n8n integration is working.",
+  "category": "automation",
+  "is_example": true,
+
+  "workflow_type": "workflow_trigger",
+  "execution_type": "tool",
+  "input_type": "text",
+  "output_type": "notification",
+  "output_action": "show_notification",
+  "input_sources": ["text_selection", "page_context"],
+
+  "requires": ["n8n"],
+  "n8n_workflow_name": "Echo \u2192 Ancroo"
+}

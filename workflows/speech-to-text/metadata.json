@@ -1,0 +1,20 @@
+{
+  "slug": "speech-to-text",
+  "name": "Speech to Text",
+  "description": "Record audio and transcribe to text using Whisper",
+  "category": "voice",
+  "is_example": true,
+
+  "workflow_type": "speech_to_text",
+  "execution_type": "tool",
+  "input_type": "audio",
+  "output_type": "replace_selection",
+  "output_action": "copy_to_clipboard",
+  "default_hotkey": "Alt+Shift+R",
+  "input_sources": ["audio"],
+
+  "requires": ["whisper"],
+  "audio_accept": "audio/*",
+  "audio_max_size_mb": 50,
+  "audio_label": "Audio recording"
+}

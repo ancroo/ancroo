@@ -1,0 +1,23 @@
+{
+  "slug": "name-formatter",
+  "name": "Name Formatter",
+  "description": "Reads name and email fields from a form, sends them to n8n for formatting, and returns a greeting",
+  "category": "automation",
+  "is_example": true,
+
+  "workflow_type": "workflow_trigger",
+  "execution_type": "tool",
+  "input_type": "form",
+  "output_type": "notification",
+  "output_action": "show_notification",
+  "input_sources": ["form_fields", "page_context"],
+
+  "form_fields": [
+    {"name": "first_name", "selector": "#field-first-name, input[name='first_name'], input[name='firstname']"},
+    {"name": "last_name",  "selector": "#field-last-name, input[name='last_name'], input[name='lastname']"},
+    {"name": "email",      "selector": "#field-email, input[name='email'], input[type='email']"}
+  ],
+
+  "requires": ["n8n"],
+  "n8n_workflow_name": "Name Formatter \u2192 Ancroo"
+}

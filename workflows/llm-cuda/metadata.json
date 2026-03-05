@@ -1,0 +1,20 @@
+{
+  "slug": "llm-cuda",
+  "name": "Grammar Fix (CUDA)",
+  "description": "Fix grammar and spelling using an LLM on NVIDIA GPU (CUDA/Ollama)",
+  "category": "text",
+  "is_example": false,
+
+  "workflow_type": "text_transformation",
+  "execution_type": "tool",
+  "input_type": "text",
+  "output_type": "text",
+  "output_action": "replace_selection",
+  "default_hotkey": null,
+  "input_sources": ["text_selection"],
+
+  "backend": "cuda",
+  "requires": ["llm"],
+  "llm_temperature": 0.1,
+  "llm_prompt": "Improve the grammar and spelling of the following text. Preserve the original meaning, tone, and language (do NOT translate). Return ONLY the corrected text, without explanations or notes.\n\nText:\n{{ text }}\n\nCorrected text:"
+}

@@ -1,0 +1,21 @@
+{
+  "slug": "stt-cuda",
+  "name": "Speech to Text (CUDA)",
+  "description": "Record audio and transcribe using Whisper on NVIDIA GPU (CUDA)",
+  "category": "voice",
+  "is_example": false,
+
+  "workflow_type": "speech_to_text",
+  "execution_type": "tool",
+  "input_type": "audio",
+  "output_type": "clipboard",
+  "output_action": "copy_to_clipboard",
+  "default_hotkey": null,
+  "input_sources": ["audio"],
+
+  "backend": "cuda",
+  "requires": ["whisper"],
+  "audio_accept": "audio/*",
+  "audio_max_size_mb": 50,
+  "audio_label": "Audio recording"
+}
