@@ -31,6 +31,7 @@ graph LR
 
     voice["Ancroo Voice"]
     backend["Ancroo<br/>Backend"]
+    runner["Ancroo<br/>Runner"]
     owui["OpenWeb UI"]
     llm["LLM"]
     n8n["n8n"]
@@ -43,11 +44,13 @@ graph LR
     backend <--> owui
     backend <--> n8n
     backend <--> stt
+    backend <--> runner
 
     style input fill:transparent,stroke:transparent,color:#1e3a5f
     style extension fill:#fef08a,stroke:#eab308,color:#713f12
     style voice fill:#fef08a,stroke:#eab308,color:#713f12
     style backend fill:#d1fae5,stroke:#10b981,color:#064e3b
+    style runner fill:#d1fae5,stroke:#10b981,color:#064e3b
     style llm fill:#fed7aa,stroke:#f97316,color:#7c2d12
     style owui fill:#fed7aa,stroke:#f97316,color:#7c2d12
     style n8n fill:#fed7aa,stroke:#f97316,color:#7c2d12
@@ -73,6 +76,7 @@ The installer clones all repositories, walks you through GPU and module selectio
 | [**Ancroo Stack**](https://github.com/Stefan-Schmidbauer/ancroo-stack)     | Docker infrastructure — Ollama, Open WebUI, PostgreSQL, plus optional modules (STT, wiki, automation) |
 | [**Ancroo Web**](https://github.com/Stefan-Schmidbauer/ancroo-web)         | Browser extension — select text, trigger workflows, get AI results inline                             |
 | [**Ancroo Backend**](https://github.com/Stefan-Schmidbauer/ancroo-backend) | Workflow engine — connects extension to LLMs, STT, and n8n                                            |
+| [**Ancroo Runner**](https://github.com/Stefan-Schmidbauer/ancroo-runner)   | Script runner — deterministic transformations via user-extensible plugins                              |
 | [**Ancroo Voice**](https://github.com/Stefan-Schmidbauer/ancroo-voice)     | Desktop push-to-talk STT — hold a key, speak, text appears at cursor                                  |
 
 Each component works independently, but together they form a complete self-hosted AI workspace.
@@ -86,6 +90,7 @@ After installation, your server runs:
 | Open WebUI     | 8080  | AI chat interface with RAG |
 | Ollama         | 11434 | Local LLM engine           |
 | Ancroo Backend | 8900  | Workflow execution API     |
+| Ancroo Runner  | 8510  | Deterministic script runner |
 | Homepage       | 80    | Service dashboard          |
 
 Optional modules add speech-to-text (Speaches/Whisper-ROCm), workflow automation (n8n), a wiki (BookStack), and more.

@@ -22,10 +22,12 @@ INSTALLER_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 WORKSPACE_ROOT="$(cd "$INSTALLER_DIR/.." && pwd)"
 STACK_DIR="${WORKSPACE_ROOT}/ancroo-stack"
 BACKEND_DIR="${WORKSPACE_ROOT}/ancroo-backend"
+RUNNER_DIR="${WORKSPACE_ROOT}/ancroo-runner"
 WEB_DIR="${WORKSPACE_ROOT}/ancroo-web"
 
 STACK_REPO="https://github.com/Stefan-Schmidbauer/ancroo-stack.git"
 BACKEND_REPO="https://github.com/Stefan-Schmidbauer/ancroo-backend.git"
+RUNNER_REPO="https://github.com/Stefan-Schmidbauer/ancroo-runner.git"
 WEB_REPO="https://github.com/Stefan-Schmidbauer/ancroo-web.git"
 
 # ─── Pre-flight ──────────────────────────────────────────
@@ -73,6 +75,7 @@ clone_or_skip() {
 
 clone_or_skip "$STACK_DIR"   "$STACK_REPO"   "ancroo-stack"
 clone_or_skip "$BACKEND_DIR" "$BACKEND_REPO" "ancroo-backend"
+clone_or_skip "$RUNNER_DIR"  "$RUNNER_REPO"  "ancroo-runner"
 clone_or_skip "$WEB_DIR"     "$WEB_REPO"     "ancroo-web"
 
 if [[ $CLONE_FAILURES -gt 0 ]]; then
