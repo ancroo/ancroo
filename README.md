@@ -62,22 +62,22 @@ graph LR
 ## Quick Install
 
 ```bash
-git clone https://github.com/Stefan-Schmidbauer/ancroo.git
+git clone https://github.com/ancroo/ancroo.git
 cd ancroo
 bash install.sh
 ```
 
-The installer clones all repositories, walks you through GPU and module selection, and prints a summary with all service URLs and credentials when done. See the [Stack README](https://github.com/Stefan-Schmidbauer/ancroo-stack#quick-start) for module details and non-interactive installation.
+The installer clones all repositories, walks you through GPU and module selection, and prints a summary with all service URLs and credentials when done. See the [Stack README](https://github.com/ancroo/ancroo-stack#quick-start) for module details and non-interactive installation.
 
 ## Components
 
 | Project                                                                    | What it does                                                                                          |
 | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| [**Ancroo Stack**](https://github.com/Stefan-Schmidbauer/ancroo-stack)     | Docker infrastructure — Ollama, Open WebUI, PostgreSQL, plus optional modules (STT, wiki, automation) |
-| [**Ancroo Web**](https://github.com/Stefan-Schmidbauer/ancroo-web)         | Browser extension — select text, trigger workflows, get AI results inline                             |
-| [**Ancroo Backend**](https://github.com/Stefan-Schmidbauer/ancroo-backend) | Workflow engine — connects extension to LLMs, STT, and n8n                                            |
-| [**Ancroo Runner**](https://github.com/Stefan-Schmidbauer/ancroo-runner)   | Script runner — deterministic transformations via user-extensible plugins                              |
-| [**Ancroo Voice**](https://github.com/Stefan-Schmidbauer/ancroo-voice)     | Desktop push-to-talk STT — hold a key, speak, text appears at cursor                                  |
+| [**Ancroo Stack**](https://github.com/ancroo/ancroo-stack)     | Docker infrastructure — Ollama, Open WebUI, PostgreSQL, plus optional modules (STT, wiki, automation) |
+| [**Ancroo Web**](https://github.com/ancroo/ancroo-web)         | Browser extension — select text, trigger workflows, get AI results inline                             |
+| [**Ancroo Backend**](https://github.com/ancroo/ancroo-backend) | Workflow engine — connects extension to LLMs, STT, and n8n                                            |
+| [**Ancroo Runner**](https://github.com/ancroo/ancroo-runner)   | Script runner — deterministic transformations via user-extensible plugins                              |
+| [**Ancroo Voice**](https://github.com/ancroo/ancroo-voice)     | Desktop push-to-talk STT — hold a key, speak, text appears at cursor                                  |
 
 Each component works independently, but together they form a complete self-hosted AI workspace.
 
@@ -97,13 +97,13 @@ Optional modules add speech-to-text (Speaches/Whisper-ROCm), workflow automation
 
 ## Contributing
 
-Contributions are welcome! Feel free to open an [issue](https://github.com/Stefan-Schmidbauer/ancroo/issues) or submit a pull request.
+Contributions are welcome! Feel free to open an [issue](https://github.com/ancroo/ancroo/issues) or submit a pull request.
 
 ## Security
 
 See [SECURITY.md](SECURITY.md) for the full security policy, Phase 1 limitations, and roadmap.
 
-To report a vulnerability, please use [GitHub's private vulnerability reporting](https://github.com/Stefan-Schmidbauer/ancroo/security/advisories/new) instead of opening a public issue.
+To report a vulnerability, please use [GitHub's private vulnerability reporting](https://github.com/ancroo/ancroo/security/advisories/new) instead of opening a public issue.
 
 ## Author
 

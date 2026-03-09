@@ -25,10 +25,10 @@ BACKEND_DIR="${WORKSPACE_ROOT}/ancroo-backend"
 RUNNER_DIR="${WORKSPACE_ROOT}/ancroo-runner"
 WEB_DIR="${WORKSPACE_ROOT}/ancroo-web"
 
-STACK_REPO="https://github.com/Stefan-Schmidbauer/ancroo-stack.git"
-BACKEND_REPO="https://github.com/Stefan-Schmidbauer/ancroo-backend.git"
-RUNNER_REPO="https://github.com/Stefan-Schmidbauer/ancroo-runner.git"
-WEB_REPO="https://github.com/Stefan-Schmidbauer/ancroo-web.git"
+STACK_REPO="https://github.com/ancroo/ancroo-stack.git"
+BACKEND_REPO="https://github.com/ancroo/ancroo-backend.git"
+RUNNER_REPO="https://github.com/ancroo/ancroo-runner.git"
+WEB_REPO="https://github.com/ancroo/ancroo-web.git"
 
 # ─── Pre-flight ──────────────────────────────────────────
 echo ""

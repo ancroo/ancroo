@@ -30,7 +30,7 @@ Security fixes are applied to the latest version on the `main` branch only. Ther
 
 ## Reporting a Vulnerability
 
-Please report security vulnerabilities through [GitHub's private vulnerability reporting](https://github.com/Stefan-Schmidbauer/ancroo/security/advisories/new).
+Please report security vulnerabilities through [GitHub's private vulnerability reporting](https://github.com/ancroo/ancroo/security/advisories/new).
 
 Do not open a public issue for security vulnerabilities.
 
@@ -40,7 +40,7 @@ You can expect an initial response within a few days. If the vulnerability is co
 
 | Project | Security Details |
 |---------|-----------------|
-| [ancroo-stack](https://github.com/Stefan-Schmidbauer/ancroo-stack) | Network exposure, credentials, firewall — see [Security Guide](https://github.com/Stefan-Schmidbauer/ancroo-stack/blob/main/docs/security.md) |
-| [ancroo-backend](https://github.com/Stefan-Schmidbauer/ancroo-backend) | API security, auth configuration |
-| [ancroo-web](https://github.com/Stefan-Schmidbauer/ancroo-web) | Browser extension permissions, CSP |
-| [ancroo-voice](https://github.com/Stefan-Schmidbauer/ancroo-voice) | Desktop client, local config files |
+| [ancroo-stack](https://github.com/ancroo/ancroo-stack) | Network exposure, credentials, firewall — see [Security Guide](https://github.com/ancroo/ancroo-stack/blob/main/docs/security.md) |
+| [ancroo-backend](https://github.com/ancroo/ancroo-backend) | API security, auth configuration |
+| [ancroo-web](https://github.com/ancroo/ancroo-web) | Browser extension permissions, CSP |
+| [ancroo-voice](https://github.com/ancroo/ancroo-voice) | Desktop client, local config files |
