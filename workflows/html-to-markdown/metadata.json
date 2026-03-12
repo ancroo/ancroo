@@ -11,6 +11,7 @@
   "output_action": "clipboard",
   "input_sources": ["text_selection"],
 
+  "demo_url": "demo.html",
   "requires": [],
   "target_config": {
     "url": "http://ancroo-runner:8000/convert/html-to-markdown",

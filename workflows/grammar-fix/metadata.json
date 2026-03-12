@@ -13,6 +13,7 @@
   "default_hotkey": "Alt+Shift+G",
   "input_sources": ["text_selection"],
 
+  "demo_url": "demo.html",
   "requires": ["llm"],
   "llm_temperature": 0.1,
   "llm_prompt": "Improve the grammar and spelling of the following text. Preserve the original meaning, tone, and language (do NOT translate). Return ONLY the corrected text, without explanations or notes.\n\nText:\n{{ text }}\n\nCorrected text:"

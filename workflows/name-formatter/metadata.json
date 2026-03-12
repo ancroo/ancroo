@@ -9,7 +9,7 @@
   "execution_type": "tool",
   "input_type": "form",
   "output_type": "notification",
-  "output_action": "show_notification",
+  "output_action": "notification",
   "input_sources": ["form_fields", "page_context"],
 
   "form_fields": [
@@ -18,6 +18,7 @@
     {"name": "email",      "selector": "#field-email, input[name='email'], input[type='email']"}
   ],
 
+  "demo_url": "demo.html",
   "requires": ["n8n"],
   "n8n_workflow_name": "Name Formatter \u2192 Ancroo"
 }

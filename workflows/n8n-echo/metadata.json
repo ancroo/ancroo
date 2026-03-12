@@ -9,9 +9,10 @@
   "execution_type": "tool",
   "input_type": "text",
   "output_type": "notification",
-  "output_action": "show_notification",
+  "output_action": "notification",
   "input_sources": ["text_selection", "page_context"],
 
+  "demo_url": "demo.html",
   "requires": ["n8n"],
   "n8n_workflow_name": "Echo \u2192 Ancroo"
 }

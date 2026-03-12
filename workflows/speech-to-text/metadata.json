@@ -13,6 +13,7 @@
   "default_hotkey": "Alt+Shift+R",
   "input_sources": ["audio"],
 
+  "demo_url": "demo.html",
   "requires": ["whisper"],
   "audio_accept": "audio/*",
   "audio_max_size_mb": 50,
