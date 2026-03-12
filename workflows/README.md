@@ -71,7 +71,8 @@ files are only needed for the initial import — they are not read at runtime.
 workflows/
 ├── README.md                      ← this file
 ├── grammar-fix/
-│   └── metadata.json
+│   ├── metadata.json
+│   └── demo.html
 ├── llm-cpu/
 │   └── metadata.json
 ├── llm-cuda/
@@ -79,21 +80,35 @@ workflows/
 ├── llm-rocm/
 │   └── metadata.json
 ├── speech-to-text/
-│   └── metadata.json
+│   ├── metadata.json
+│   └── demo.html
 ├── stt-cuda/
 │   └── metadata.json
 ├── stt-rocm/
 │   └── metadata.json
+├── freight-calculator/
+│   ├── metadata.json
+│   ├── demo.html
+│   └── n8n-workflow.json
 ├── contact-form-capture/
-│   └── metadata.json
+│   ├── metadata.json
+│   └── demo.html
 ├── name-formatter/
-│   └── metadata.json
+│   ├── metadata.json
+│   └── demo.html
+├── html-to-markdown/
+│   ├── metadata.json
+│   └── demo.html
 └── n8n-echo/
-    └── metadata.json
+    ├── metadata.json
+    └── demo.html
 ```
 
-Each subdirectory contains a single `metadata.json` with a unique `slug` field.
-The install script (`lib/setup-workflows.sh`) imports all of them automatically.
+Each subdirectory contains a `metadata.json` with a unique `slug` field and
+optionally a `demo.html` page for testing the workflow via the browser extension.
+Import workflows via the Admin GUI (Import page) — drop the folder or select
+both files. The `demo.html` is stored in the database and served at
+`/admin/workflows/{slug}/demo`.
 
 ---
 
@@ -146,7 +161,9 @@ Multiple sources can be combined in the array.
 |---|---|
 | `replace_selection` | Replaces the selected text with the workflow output. |
 | `copy_to_clipboard` | Copies the result to the clipboard. |
-| `show_notification` | Shows a brief notification popup (result text or confirmation). |
+| `clipboard` | Alias for `copy_to_clipboard`. |
+| `notification` | Shows a brief notification popup (result text or confirmation). |
+| `fill_fields` | Writes result values back into form fields using `output_fields` selectors. |
 | `none` | No client-side action; result is discarded (useful for fire-and-forget triggers). |
 
 ### requires values
@@ -198,6 +215,7 @@ Used when `requires` contains `"n8n"`:
 |---|---|---|---|
 | `n8n_workflow_name` | string | workflow name | Display name for the auto-created n8n workflow. |
 | `form_fields` | array | `[]` | See [Form fields](#form-fields) below. |
+| `output_fields` | array | `[]` | See [Output fields](#output-fields) below. Used with `output_action: "fill_fields"`. |
 
 ### Form fields
 
@@ -215,6 +233,31 @@ extension which DOM element to read:
 |---|---|
 | `name` | Key used in the payload sent to the backend / webhook. |
 | `selector` | CSS selector (comma-separated fallback list). The extension tries each selector in order and uses the first match. |
+
+### Output fields
+
+Used when `output_action` is `"fill_fields"`.  Each entry tells the extension
+which DOM element to write the result into:
+
+```json
+"output_fields": [
+  { "name": "freight_cost", "selector": "#field-result, input[name='result']" }
+]
+```
+
+| Key | Description |
+|---|---|
+| `name` | Key in the backend response to extract the value from. |
+| `selector` | CSS selector for the target element. The extension sets its `value` (inputs) or `textContent`. |
+
+### Demo page (demo.html)
+
+Each workflow can include a `demo.html` file alongside `metadata.json`. This
+is a standalone HTML page with form fields matching the workflow's CSS selectors.
+It is imported into the database and served at `/admin/workflows/{slug}/demo`.
+
+The demo page allows testing the workflow end-to-end: open the page, activate
+the Ancroo extension, select the workflow, and click Execute.
 
 ---
 
