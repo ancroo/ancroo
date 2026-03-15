@@ -164,6 +164,7 @@ Multiple sources can be combined in the array.
 | `clipboard` | Alias for `copy_to_clipboard`. |
 | `notification` | Shows a brief notification popup (result text or confirmation). |
 | `fill_fields` | Writes result values back into form fields using `output_fields` selectors. |
+| `download_file` | Decodes base64 result and triggers a browser file download. Requires `filename` and `mime_type` in the upstream response. |
 | `none` | No client-side action; result is discarded (useful for fire-and-forget triggers). |
 
 ### requires values

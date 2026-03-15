@@ -1,0 +1,23 @@
+{
+  "slug": "webpage-to-ebook",
+  "name": "Webpage to EPUB",
+  "description": "Convert the current webpage to an EPUB ebook file",
+  "category": "text",
+
+  "workflow_type": "custom",
+  "execution_type": "tool",
+  "input_type": "text",
+  "output_type": "file",
+  "output_action": "download_file",
+  "input_sources": ["text_selection", "page_context"],
+
+  "requires": [],
+  "target_config": {
+    "url": "http://ancroo-runner:8000/convert/webpage-to-ebook",
+    "method": "POST",
+    "headers": {"Content-Type": "application/json"},
+    "payload_template": "{\"html\": \"{{ html }}\", \"title\": \"{{ title }}\", \"url\": \"{{ url }}\"}",
+    "response_mapping": "$.result",
+    "timeout": 60
+  }
+}
