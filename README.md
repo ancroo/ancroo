@@ -109,6 +109,22 @@ To report a vulnerability, please use [GitHub's private vulnerability reporting]
 
 **Stefan Schmidbauer** — [GitHub](https://github.com/Stefan-Schmidbauer)
 
+## Acknowledgments
+
+Ancroo builds on these open-source projects:
+
+| Project | Purpose | License |
+|---------|---------|---------|
+| [Ollama](https://ollama.com/) | Local LLM inference | MIT |
+| [Open WebUI](https://docs.openwebui.com/) | AI chat interface with RAG | [Open WebUI License](https://docs.openwebui.com/license/) |
+| [OpenAI Whisper](https://github.com/openai/whisper) | Speech recognition models | MIT |
+| [Speaches](https://github.com/speaches-ai/speaches) | Whisper API server (CUDA) | MIT |
+| [n8n](https://n8n.io/) | Workflow automation | [Sustainable Use License](https://github.com/n8n-io/n8n/blob/master/LICENSE.md) |
+| [PostgreSQL](https://www.postgresql.org/) | Database | PostgreSQL License |
+| [Homepage](https://gethomepage.dev/) | Service dashboard | GPL-3.0 |
+
+For the complete list of third-party software and licenses, see the [Ancroo Stack NOTICE file](https://github.com/ancroo/ancroo-stack/blob/main/NOTICE).
+
 ## License
 
 MIT — see [LICENSE](LICENSE). The Ancroo name is not covered by this license and remains the property of the author. Each sub-project has its own license — see the individual repositories.
