@@ -9,7 +9,7 @@
   "input_type": "text",
   "output_type": "file",
   "output_action": "download_file",
-  "input_sources": ["text_selection", "page_context"],
+  "input_sources": ["page_html"],
 
   "requires": [],
   "target_config": {
