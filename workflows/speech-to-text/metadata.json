@@ -6,16 +6,13 @@
   "is_example": true,
 
   "workflow_type": "speech_to_text",
-  "execution_type": "tool",
-  "input_type": "audio",
-  "output_type": "replace_selection",
-  "output_action": "copy_to_clipboard",
+  "output_action": "clipboard",
   "default_hotkey": "Alt+Shift+R",
-  "input_sources": ["audio"],
-
   "demo_url": "demo.html",
-  "requires": ["whisper"],
-  "audio_accept": "audio/*",
-  "audio_max_size_mb": 50,
-  "audio_label": "Audio recording"
+
+  "recipe": {
+    "collect": ["audio"],
+    "audio_accept": "audio/*",
+    "audio_max_size_mb": 50
+  }
 }

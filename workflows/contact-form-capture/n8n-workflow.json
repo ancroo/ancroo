@@ -1,10 +1,10 @@
 {
-  "name": "Freight Calculator \u2192 Ancroo",
+  "name": "Contact Form \u2192 Ancroo",
   "nodes": [
     {
       "parameters": {
         "httpMethod": "POST",
-        "path": "freight-calculator",
+        "path": "contact-form-capture",
         "responseMode": "responseNode",
         "options": {}
       },
@@ -13,14 +13,14 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2,
       "position": [240, 300],
-      "webhookId": "freight-calculator"
+      "webhookId": "contact-form-capture"
     },
     {
       "parameters": {
-        "jsCode": "const input = $input.first().json;\nconst body = input.body || input;\nconst fields = body.fields || {};\n\nconst weight = parseFloat(fields.weight_kg) || 0;\nconst zone = (fields.zone || '').toUpperCase();\nconst packages = parseInt(fields.packages) || 1;\n\nconst zoneRates = { A: 2.50, B: 4.00, C: 7.50, D: 12.00 };\nconst rate = zoneRates[zone] || 5.00;\nconst totalCost = (weight * rate * packages).toFixed(2);\n\nreturn [{ json: { freight_cost: totalCost } }];\n"
+        "jsCode": "const input = $input.first().json;\nconst body = input.body || input;\nconst fields = body.fields || {};\n\nconst name = (fields.name || '').trim();\nconst email = (fields.email || '').trim();\nconst subject = (fields.subject || '').trim();\nconst category = (fields.category || '').trim();\nconst message = (fields.message || '').trim();\n\nconst missing = [];\nif (!name) missing.push('name');\nif (!email) missing.push('email');\nif (!message) missing.push('message');\n\nif (missing.length > 0) {\n  return [{ json: { text: `Missing required fields: ${missing.join(', ')}` } }];\n}\n\nconst summary = [\n  `Contact form received from ${name} <${email}>`,\n  subject ? `Subject: ${subject}` : null,\n  category ? `Category: ${category}` : null,\n  `Message: ${message.substring(0, 100)}${message.length > 100 ? '...' : ''}`\n].filter(Boolean).join('\\n');\n\nreturn [{ json: { text: summary } }];\n"
       },
       "id": "code-node",
-      "name": "Calculate Freight",
+      "name": "Process Form",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [460, 300]
@@ -43,14 +43,14 @@
       "main": [
         [
           {
-            "node": "Calculate Freight",
+            "node": "Process Form",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Calculate Freight": {
+    "Process Form": {
       "main": [
         [
           {

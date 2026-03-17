@@ -6,15 +6,13 @@
   "is_example": true,
 
   "workflow_type": "text_transformation",
-  "execution_type": "tool",
-  "input_type": "text",
-  "output_type": "replace_selection",
   "output_action": "replace_selection",
   "default_hotkey": "Alt+Shift+G",
-  "input_sources": ["text_selection"],
-
   "demo_url": "demo.html",
-  "requires": ["llm"],
-  "llm_temperature": 0.1,
-  "llm_prompt": "Improve the grammar and spelling of the following text. Preserve the original meaning, tone, and language (do NOT translate). Return ONLY the corrected text, without explanations or notes.\n\nText:\n{{ text }}\n\nCorrected text:"
+
+  "recipe": {
+    "collect": ["text_selection"]
+  },
+  "prompt_template": "Improve the grammar and spelling of the following text. Preserve the original meaning, tone, and language (do NOT translate). Return ONLY the corrected text, without explanations or notes.\n\nText:\n{{ text }}\n\nCorrected text:",
+  "temperature": 0.1
 }

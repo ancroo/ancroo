@@ -5,14 +5,16 @@
   "category": "automation",
   "is_example": true,
 
-  "workflow_type": "workflow_trigger",
-  "execution_type": "tool",
-  "input_type": "text",
-  "output_type": "notification",
+  "workflow_type": "tool",
   "output_action": "notification",
-  "input_sources": ["text_selection", "page_context"],
-
   "demo_url": "demo.html",
-  "requires": ["n8n"],
-  "n8n_workflow_name": "Echo \u2192 Ancroo"
+
+  "recipe": {
+    "collect": ["text_selection", "page_context"]
+  },
+  "tool": {
+    "name": "Echo → Ancroo",
+    "tool_type": "n8n_webhook",
+    "n8n_workflow_name": "Echo → Ancroo"
+  }
 }

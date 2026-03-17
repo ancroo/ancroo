@@ -52,10 +52,25 @@ for meta_file in "$WORKFLOWS_DIR"/*/metadata.json; do
     slug=$(python3 -c "import json,sys; print(json.load(open(sys.argv[1])).get('slug',''))" "$meta_file" 2>/dev/null || true)
     [[ -z "$slug" ]] && continue
 
-    response=$(curl -sf --max-time 60 \
+    # Merge n8n-workflow.json into metadata if present
+    wf_dir="$(dirname "$meta_file")"
+    n8n_wf_file="$wf_dir/n8n-workflow.json"
+    if [[ -f "$n8n_wf_file" ]]; then
+        payload=$(python3 -c "
+import json, sys
+meta = json.load(open(sys.argv[1]))
+n8n_wf = json.load(open(sys.argv[2]))
+meta['n8n_workflow_json'] = n8n_wf
+json.dump(meta, sys.stdout)
+" "$meta_file" "$n8n_wf_file" 2>/dev/null)
+    else
+        payload=$(cat "$meta_file")
+    fi
+
+    response=$(echo "$payload" | curl -sf --max-time 60 \
         -X POST "${BASE_URL}/admin/api/import-workflow" \
         -H "Content-Type: application/json" \
-        -d @"$meta_file" 2>/dev/null || echo '{"status":"error","message":"request failed"}')
+        -d @- 2>/dev/null || echo '{"status":"error","message":"request failed"}')
 
     status=$(echo "$response" | python3 -c "import sys,json; print(json.load(sys.stdin).get('status','error'))" 2>/dev/null || echo "error")
 
@@ -100,10 +115,25 @@ if [[ ${#_inactive_files[@]} -gt 0 ]]; then
         for meta_file in "${_inactive_files[@]}"; do
             slug=$(python3 -c "import json,sys; print(json.load(open(sys.argv[1])).get('slug',''))" "$meta_file" 2>/dev/null || true)
 
-            response=$(curl -sf --max-time 120 \
+            # Merge n8n-workflow.json into metadata if present
+            wf_dir="$(dirname "$meta_file")"
+            n8n_wf_file="$wf_dir/n8n-workflow.json"
+            if [[ -f "$n8n_wf_file" ]]; then
+                payload=$(python3 -c "
+import json, sys
+meta = json.load(open(sys.argv[1]))
+n8n_wf = json.load(open(sys.argv[2]))
+meta['n8n_workflow_json'] = n8n_wf
+json.dump(meta, sys.stdout)
+" "$meta_file" "$n8n_wf_file" 2>/dev/null)
+            else
+                payload=$(cat "$meta_file")
+            fi
+
+            response=$(echo "$payload" | curl -sf --max-time 120 \
                 -X POST "${BASE_URL}/admin/api/import-workflow" \
                 -H "Content-Type: application/json" \
-                -d @"$meta_file" 2>/dev/null || echo '{"status":"error"}')
+                -d @- 2>/dev/null || echo '{"status":"error"}')
 
             status=$(echo "$response" | python3 -c "import sys,json; print(json.load(sys.stdin).get('status','error'))" 2>/dev/null || echo "error")
 
