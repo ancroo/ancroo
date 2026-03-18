@@ -90,10 +90,6 @@ workflows/
 │   ├── metadata.json
 │   ├── demo.html
 │   └── n8n-workflow.json
-├── n8n-echo/
-│   ├── metadata.json
-│   ├── demo.html
-│   └── n8n-workflow.json
 └── freight-calculator/
     ├── metadata.json
     ├── demo.html
