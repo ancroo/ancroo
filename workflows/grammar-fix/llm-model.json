@@ -1,0 +1,13 @@
+{
+  "_type": "llm_model",
+  "_version": 1,
+  "name": "Ollama-ROCm (GPU)",
+  "provider_type": "ollama",
+  "base_url": "http://ollama-rocm:11434",
+  "endpoint_execute": "/v1/chat/completions",
+  "endpoint_models": "/v1/models",
+  "model_id": "mistral:7b",
+  "default_temperature": 0.3,
+  "config": {},
+  "is_active": true
+}
