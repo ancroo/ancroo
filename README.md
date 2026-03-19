@@ -2,11 +2,11 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Bash](https://img.shields.io/badge/Bash-4EAA25?logo=gnubash&logoColor=white)](https://www.gnu.org/software/bash/)
-[![Status: Alpha](https://img.shields.io/badge/Status-Alpha-orange.svg)]()
+[![Status: Beta](https://img.shields.io/badge/Status-Beta-yellow.svg)]()
 
 **Your AI workflows, your infrastructure, your data.** Ancroo is a self-hosted productivity ecosystem — select text in the browser, trigger an AI workflow, get results right where you work. Grammar correction, speech-to-text, form automation, and more — all powered by local LLMs and STT models. Nothing leaves your network.
 
-> **Early stage** — Ancroo is under active development. Some components are intended for local/trusted networks only. Do not expose to the public internet without security measures.
+> **Phase 0 (Beta)** — Core functionality works end-to-end, but the stack runs without encryption or authentication. Intended for local/trusted networks only. See the [Roadmap](ROADMAP.md) for the security path forward.
 
 ![Ancroo Admin Workflows and Sidepanel](ancroo-admin-workflows-sidepanel.png)
 
@@ -99,11 +99,11 @@ Optional modules add speech-to-text (Speaches/Whisper-ROCm), workflow automation
 
 Contributions are welcome! Feel free to open an [issue](https://github.com/ancroo/ancroo/issues) or submit a pull request.
 
-## Security
+## Security & Roadmap
 
-See [SECURITY.md](SECURITY.md) for the full security policy, Phase 1 limitations, and roadmap.
+See the [Roadmap](ROADMAP.md) for the phased security path (encryption → API protection → SSO/multi-user).
 
-To report a vulnerability, please use [GitHub's private vulnerability reporting](https://github.com/ancroo/ancroo/security/advisories/new) instead of opening a public issue.
+See [SECURITY.md](SECURITY.md) for the vulnerability reporting policy. To report a vulnerability, please use [GitHub's private vulnerability reporting](https://github.com/ancroo/ancroo/security/advisories/new) instead of opening a public issue.
 
 ## Author
 
