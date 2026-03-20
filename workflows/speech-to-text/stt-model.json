@@ -3,7 +3,7 @@
   "_version": 1,
   "name": "Whisper-ROCm (GPU)",
   "provider_type": "whisper_openai_compatible",
-  "base_url": "http://whisper-rocm:8002",
+  "base_url": "http://whisper-rocm:8000",
   "model_id": "openai/whisper-large-v3-turbo",
   "default_language": null,
   "config": {},
