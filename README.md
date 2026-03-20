@@ -15,7 +15,7 @@
 - **Works where you work** — select text in any browser tab, trigger AI workflows, get results inline — no app-switching, no copy-paste
 - **Any software, any website** — not tied to one editor or platform; if it runs in a browser, Ancroo can help
 - **Fully self-hosted** — your data stays on your machine, no cloud dependency
-- **Modular** — pick what you need: LLMs, speech-to-text, automation, wiki — enable modules with one command
+- **All-in-one** — LLMs, speech-to-text, automation, wiki, dashboard — everything runs out of the box
 - **GPU-flexible** — works with NVIDIA (CUDA), AMD (ROCm), or CPU-only
 - **One installer** — 3 commands to a running stack with AI chat, workflow engine, and STT
 
@@ -62,18 +62,18 @@ graph LR
 ## Quick Install
 
 ```bash
-git clone https://github.com/ancroo/ancroo.git
-cd ancroo
+git clone https://github.com/ancroo/ancroo-stack.git
+cd ancroo-stack
 bash install.sh
 ```
 
-The installer clones all repositories, walks you through GPU and module selection, and prints a summary with all service URLs and credentials when done. See the [Stack README](https://github.com/ancroo/ancroo-stack#quick-start) for module details and non-interactive installation.
+The installer walks you through GPU and STT selection, optionally clones companion projects (backend, runner, extension), and prints a summary with all service URLs and credentials when done. See the [Stack README](https://github.com/ancroo/ancroo-stack#quick-start) for details.
 
 ## Components
 
 | Project                                                                    | What it does                                                                                          |
 | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
-| [**Ancroo Stack**](https://github.com/ancroo/ancroo-stack)     | Docker infrastructure — Ollama, Open WebUI, PostgreSQL, plus optional modules (STT, wiki, automation) |
+| [**Ancroo Stack**](https://github.com/ancroo/ancroo-stack)     | Docker infrastructure — Ollama, Open WebUI, PostgreSQL, n8n, BookStack, STT, and more |
 | [**Ancroo Web**](https://github.com/ancroo/ancroo-web)         | Browser extension — select text, trigger workflows, get AI results inline                             |
 | [**Ancroo Backend**](https://github.com/ancroo/ancroo-backend) | Workflow engine — connects extension to LLMs, STT, and n8n                                            |
 | [**Ancroo Runner**](https://github.com/ancroo/ancroo-runner)   | Script runner — deterministic transformations via user-extensible plugins                              |
@@ -91,9 +91,11 @@ After installation, your server runs:
 | Ollama         | 11434 | Local LLM engine           |
 | Ancroo Backend | 8900  | Workflow execution API     |
 | Ancroo Runner  | 8510  | Deterministic script runner |
+| n8n            | 5678  | Workflow automation        |
+| BookStack      | 8875  | Documentation wiki         |
+| Speaches/Whisper | 8100/8002 | Speech-to-text       |
 | Homepage       | 80    | Service dashboard          |
-
-Optional modules add speech-to-text (Speaches/Whisper-ROCm), workflow automation (n8n), a wiki (BookStack), and more.
+| Adminer        | 8081  | Database admin UI          |
 
 ## Contributing
 
