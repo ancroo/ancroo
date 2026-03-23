@@ -5,21 +5,40 @@
 
 Records audio and transcribes it to text using Whisper. The transcription is copied to clipboard.
 
+Two GPU variants are provided — import the one matching your hardware:
+
+| Variant | STT model file | Workflow file | GPU |
+|---------|---------------|---------------|-----|
+| ROCm | `stt-model.json` | `workflow.json` | AMD (Whisper-ROCm) |
+| CUDA | `stt-model-cuda.json` | `workflow-cuda.json` | NVIDIA (Speaches) |
+
 ## Files
 
 | File | Entity type | Purpose |
 |------|-------------|---------|
-| `workflow.json` | workflow | Workflow definition |
+| `workflow.json` | workflow | Workflow definition (ROCm) |
+| `workflow-cuda.json` | workflow | Workflow definition (CUDA) |
 | `category.json` | category | Category "voice" |
 | `stt-model.json` | stt_model | Whisper-ROCm provider |
+| `stt-model-cuda.json` | stt_model | Speaches CUDA provider |
 | `demo.html` | — | Interactive demo page |
 
 ## Import
+
+### ROCm (AMD GPU)
 
 ```bash
 curl -X POST http://localhost:8900/admin/api/import -H "Content-Type: application/json" -d @category.json
 curl -X POST http://localhost:8900/admin/api/import -H "Content-Type: application/json" -d @stt-model.json
 curl -X POST http://localhost:8900/admin/api/import -H "Content-Type: application/json" -d @workflow.json
+```
+
+### CUDA (NVIDIA GPU)
+
+```bash
+curl -X POST http://localhost:8900/admin/api/import -H "Content-Type: application/json" -d @category.json
+curl -X POST http://localhost:8900/admin/api/import -H "Content-Type: application/json" -d @stt-model-cuda.json
+curl -X POST http://localhost:8900/admin/api/import -H "Content-Type: application/json" -d @workflow-cuda.json
 ```
 
 Import order: category → stt-model → workflow (dependencies first).

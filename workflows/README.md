@@ -43,9 +43,11 @@ workflows/
 │   └── demo.html
 ├── speech-to-text/
 │   ├── README.md
-│   ├── workflow.json
-│   ├── category.json        ← category "voice"
-│   ├── stt-model.json       ← Whisper-ROCm provider
+│   ├── workflow.json          ← workflow (ROCm)
+│   ├── workflow-cuda.json     ← workflow (CUDA)
+│   ├── category.json          ← category "voice"
+│   ├── stt-model.json         ← Whisper-ROCm provider
+│   ├── stt-model-cuda.json    ← Speaches CUDA provider
 │   └── demo.html
 ├── html-to-markdown/
 │   ├── README.md
