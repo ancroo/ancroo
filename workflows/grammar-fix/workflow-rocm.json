@@ -11,7 +11,7 @@
   "tool_name": null,
   "output_action": "replace_selection",
   "default_hotkey": "Alt+Shift+G",
-  "demo_url": "demo.html",
+  "demo_url": "grammar-fix/demo.html",
   "timeout_seconds": 60,
   "recipe": {
     "collect": ["text_selection"]

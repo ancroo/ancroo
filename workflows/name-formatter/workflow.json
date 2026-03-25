@@ -10,7 +10,7 @@
   "stt_model_name": null,
   "tool_name": "Name Formatter → Ancroo",
   "output_action": "notification",
-  "demo_url": "demo.html",
+  "demo_url": "name-formatter/demo.html",
   "timeout_seconds": 60,
   "recipe": {
     "collect": ["form_fields", "page_context"],
