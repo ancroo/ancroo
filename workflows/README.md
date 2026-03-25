@@ -37,18 +37,18 @@ workflows/
 ├── README.md
 ├── grammar-fix/
 │   ├── README.md
-│   ├── workflow.json          ← workflow (ROCm)
+│   ├── workflow-rocm.json      ← workflow (ROCm)
 │   ├── workflow-cuda.json     ← workflow (CUDA)
 │   ├── category.json          ← category "text"
-│   ├── llm-model.json         ← Ollama-ROCm provider
+│   ├── llm-model-rocm.json    ← Ollama-ROCm provider
 │   ├── llm-model-cuda.json    ← Ollama-CUDA provider
 │   └── demo.html
 ├── speech-to-text/
 │   ├── README.md
-│   ├── workflow.json          ← workflow (ROCm)
+│   ├── workflow-rocm.json      ← workflow (ROCm)
 │   ├── workflow-cuda.json     ← workflow (CUDA)
 │   ├── category.json          ← category "voice"
-│   ├── stt-model.json         ← Whisper-ROCm provider
+│   ├── stt-model-rocm.json    ← Whisper-ROCm provider
 │   ├── stt-model-cuda.json    ← Speaches CUDA provider
 │   └── demo.html
 ├── html-to-markdown/
