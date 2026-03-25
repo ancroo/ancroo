@@ -1,7 +1,7 @@
 {
   "_type": "llm_model",
   "_version": 1,
-  "name": "Ollama-ROCm (GPU)",
+  "name": "Ollama-CUDA (GPU)",
   "provider_type": "ollama",
   "base_url": "http://ollama:11434",
   "endpoint_execute": "/api/generate",

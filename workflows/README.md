@@ -37,9 +37,11 @@ workflows/
 ├── README.md
 ├── grammar-fix/
 │   ├── README.md
-│   ├── workflow.json        ← workflow definition
-│   ├── category.json        ← category "text"
-│   ├── llm-model.json       ← Ollama-ROCm provider
+│   ├── workflow.json          ← workflow (ROCm)
+│   ├── workflow-cuda.json     ← workflow (CUDA)
+│   ├── category.json          ← category "text"
+│   ├── llm-model.json         ← Ollama-ROCm provider
+│   ├── llm-model-cuda.json    ← Ollama-CUDA provider
 │   └── demo.html
 ├── speech-to-text/
 │   ├── README.md

@@ -1,9 +1,9 @@
 {
   "_type": "workflow",
   "_version": 1,
-  "slug": "speech-to-text",
-  "name": "Speech to Text",
-  "description": "Record audio and transcribe to text using Whisper",
+  "slug": "speech-to-text-rocm",
+  "name": "Speech to Text (ROCm)",
+  "description": "Record audio and transcribe to text using Whisper (AMD GPU)",
   "workflow_type": "speech_to_text",
   "category_name": "voice",
   "llm_model_name": null,
