@@ -57,7 +57,9 @@ graph LR
     style stt fill:#fed7aa,stroke:#f97316,color:#7c2d12
 ```
 
-**Example:** You select a paragraph with typos in your browser → press a hotkey → the extension sends the text to your server → Ollama fixes the grammar with a local LLM → the corrected text replaces your selection. Under 3 seconds, fully offline.
+**Example (Backend Mode):** You select a paragraph with typos in your browser → press a hotkey → the extension sends the text to your server → Ollama fixes the grammar with a local LLM → the corrected text replaces your selection. Under 3 seconds, fully offline.
+
+**Example (Direct Mode):** Install the extension, add your OpenAI/Anthropic/Gemini API key → select text → press a hotkey → the extension calls the LLM API directly → result appears in the page. No server needed.
 
 ## Quick Install
 
@@ -74,12 +76,12 @@ The installer walks you through GPU and STT selection, optionally clones compani
 | Project                                                                    | What it does                                                                                          |
 | -------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
 | [**Ancroo Stack**](https://github.com/ancroo/ancroo-stack)     | Docker infrastructure — Ollama, Open WebUI, PostgreSQL, n8n, BookStack, STT, and more |
-| [**Ancroo Web**](https://github.com/ancroo/ancroo-web)         | Browser extension — select text, trigger workflows, get AI results inline                             |
+| [**Ancroo Web**](https://github.com/ancroo/ancroo-web)         | Browser extension — select text, trigger workflows, get AI results inline. Works standalone (Direct Mode) or with the backend                             |
 | [**Ancroo Backend**](https://github.com/ancroo/ancroo-backend) | Workflow engine — connects extension to LLMs, STT, and n8n                                            |
 | [**Ancroo Runner**](https://github.com/ancroo/ancroo-runner)   | Script runner — deterministic transformations via user-extensible plugins                              |
 | [**Ancroo Voice**](https://github.com/ancroo/ancroo-voice)     | Desktop push-to-talk STT — hold a key, speak, text appears at cursor                                  |
 
-Each component works independently, but together they form a complete self-hosted AI workspace.
+Each component works independently, but together they form a complete self-hosted AI workspace. Ancroo Web can also run standalone in Direct Mode — just add your LLM provider API key, no server required.
 
 ## What's Included
 
