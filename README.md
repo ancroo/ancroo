@@ -29,6 +29,7 @@ graph LR
         extension["Ancroo Web<br/>Browser Extension"]
     end
 
+    llmapi["LLM APIs<br/>OpenAI / Anthropic<br/>Gemini / Ollama"]
     voice["Ancroo Voice"]
     backend["Ancroo<br/>Backend"]
     runner["Ancroo<br/>Runner"]
@@ -38,7 +39,8 @@ graph LR
     stt["Speech to<br/>Text"]
 
     input <--> extension
-    extension <--> backend
+    extension <-- "Direct Mode" --> llmapi
+    extension <-- "Backend Mode" --> backend
     voice <--> backend
     backend <--> llm
     backend <--> owui
@@ -48,6 +50,7 @@ graph LR
 
     style input fill:transparent,stroke:transparent,color:#1e3a5f
     style extension fill:#fef08a,stroke:#eab308,color:#713f12
+    style llmapi fill:#dbeafe,stroke:#3b82f6,color:#1e3a5f
     style voice fill:#fef08a,stroke:#eab308,color:#713f12
     style backend fill:#d1fae5,stroke:#10b981,color:#064e3b
     style runner fill:#d1fae5,stroke:#10b981,color:#064e3b
