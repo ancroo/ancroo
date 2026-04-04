@@ -114,7 +114,7 @@ See [SECURITY.md](SECURITY.md) for the vulnerability reporting policy. To report
 
 ## Author
 
-**Stefan Schmidbauer** — [GitHub](https://github.com/Stefan-Schmidbauer)
+**Stefan Schmidbauer** — [GitHub](https://github.com/Stefan-Schmidbauer) · [stefan@ancroo.com](mailto:stefan@ancroo.com)
 
 ## Acknowledgments
 
