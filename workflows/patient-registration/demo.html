@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Registration - Ancroo Demo</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f5f5f5; padding: 40px; color: #333; }
+    .container { max-width: 520px; margin: 0 auto; }
+    h1 { font-size: 1.5rem; margin-bottom: 8px; }
+    .subtitle { color: #666; font-size: 0.9rem; margin-bottom: 24px; }
+    .card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .field { margin-bottom: 16px; }
+    .field label { display: block; font-size: 0.85rem; font-weight: 600; color: #555; margin-bottom: 6px; }
+    .field input, .field select, .field textarea {
+      width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px;
+      font-size: 0.95rem; outline: none; transition: border-color 0.2s; font-family: inherit;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,0.1); }
+    .field textarea { resize: vertical; min-height: 80px; }
+    .row { display: flex; gap: 16px; }
+    .row .field { flex: 1; }
+    .checkbox-group { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+    .checkbox-group label { font-weight: 400; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; cursor: pointer; }
+    .checkbox-group input[type="checkbox"] { width: auto; }
+    .hint { margin-top: 24px; padding: 12px 16px; background: #eff6ff; border-radius: 8px; font-size: 0.8rem; color: #1e40af; line-height: 1.5; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Patientenaufnahme</h1>
+    <p class="subtitle">Ancroo Workflow Demo &mdash; captures patient data, stores in database via n8n</p>
+
+    <div class="card">
+      <div class="row">
+        <div class="field">
+          <label for="field-nachname">Nachname</label>
+          <input type="text" id="field-nachname" name="nachname" value="M&uuml;ller" placeholder="M&uuml;ller">
+        </div>
+        <div class="field">
+          <label for="field-vorname">Vorname</label>
+          <input type="text" id="field-vorname" name="vorname" value="Thomas" placeholder="Thomas">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="field-geburtsdatum">Geburtsdatum</label>
+          <input type="date" id="field-geburtsdatum" name="geburtsdatum" value="1985-03-15">
+        </div>
+        <div class="field">
+          <label for="field-versicherung">Versicherung</label>
+          <select id="field-versicherung" name="versicherung">
+            <option value="gkv" selected>Gesetzlich (GKV)</option>
+            <option value="pkv">Privat (PKV)</option>
+            <option value="beihilfe">Beihilfe</option>
+            <option value="selbstzahler">Selbstzahler</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="field-telefon">Telefon</label>
+        <input type="tel" id="field-telefon" name="telefon" value="0151 12345678" placeholder="0151 12345678">
+      </div>
+
+      <div class="field">
+        <label for="field-beschwerden">Aktuelle Beschwerden</label>
+        <textarea id="field-beschwerden" name="beschwerden" placeholder="Beschreibung der aktuellen Beschwerden...">Schmerzen im Bereich 36, verst&auml;rkt bei Kaltreiz seit ca. 2 Wochen</textarea>
+      </div>
+
+      <div class="field">
+        <label>Vorerkrankungen</label>
+        <input type="hidden" id="field-vorerkrankungen" name="vorerkrankungen" value="">
+        <div class="checkbox-group">
+          <label><input type="checkbox" value="diabetes" onchange="updateVorerkrankungen()"> Diabetes</label>
+          <label><input type="checkbox" value="blutgerinnung" onchange="updateVorerkrankungen()"> Blutgerinnung</label>
+          <label><input type="checkbox" value="herz" onchange="updateVorerkrankungen()"> Herz-Kreislauf</label>
+          <label><input type="checkbox" value="allergie" checked onchange="updateVorerkrankungen()"> Allergien</label>
+          <label><input type="checkbox" value="osteoporose" onchange="updateVorerkrankungen()"> Osteoporose</label>
+          <label><input type="checkbox" value="bisphosphonate" onchange="updateVorerkrankungen()"> Bisphosphonate</label>
+          <label><input type="checkbox" value="immunsuppression" onchange="updateVorerkrankungen()"> Immunsuppression</label>
+          <label><input type="checkbox" value="sonstige" onchange="updateVorerkrankungen()"> Sonstige</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="hint">
+      <strong>How to use:</strong> Open the Ancroo side panel, select "Patient Registration",
+      and click Execute. The extension reads all form fields above, sends them to n8n
+      which stores them in the demo database, and shows a confirmation notification.
+    </div>
+  </div>
+
+  <script>
+    function updateVorerkrankungen() {
+      const checked = document.querySelectorAll('.checkbox-group input[type="checkbox"]:checked');
+      const values = Array.from(checked).map(cb => cb.value);
+      document.getElementById('field-vorerkrankungen').value = values.join(', ');
+    }
+    // Initialize on load
+    updateVorerkrankungen();
+  </script>
+</body>
+</html>

@@ -29,14 +29,18 @@ graph LR
         extension["Ancroo Web<br/>Browser Extension"]
     end
 
-    llmapi["LLM APIs<br/>OpenAI / Anthropic<br/>Gemini / Ollama"]
     voice["Ancroo Voice"]
     backend["Ancroo<br/>Backend"]
     runner["Ancroo<br/>Runner"]
-    owui["OpenWeb UI"]
-    llm["LLM"]
-    n8n["n8n"]
-    stt["Speech to<br/>Text"]
+
+    subgraph Services[" "]
+        direction TB
+        llmapi["LLM APIs<br/>OpenAI / Anthropic<br/>Gemini / Ollama"]
+        llm["LLM"]
+        owui["OpenWeb UI"]
+        n8n["n8n"]
+        stt["Speech to<br/>Text"]
+    end
 
     input <--> extension
     extension <-- "Direct Mode" --> llmapi
@@ -48,6 +52,7 @@ graph LR
     backend <--> stt
     backend <--> runner
 
+    style Services fill:transparent,stroke:transparent
     style input fill:transparent,stroke:transparent,color:#1e3a5f
     style extension fill:#fef08a,stroke:#eab308,color:#713f12
     style llmapi fill:#dbeafe,stroke:#3b82f6,color:#1e3a5f
