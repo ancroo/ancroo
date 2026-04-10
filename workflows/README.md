@@ -1,8 +1,21 @@
 # Ancroo Workflows
 
-This directory contains example workflow definitions that can be imported into
+This directory contains workflow definitions that can be imported into
 the Ancroo backend via the admin UI or API.  Each workflow lives in its own
 subdirectory with individual export files per entity type.
+
+---
+
+## Naming convention
+
+**Default = private.**  Only directories with the `example-` prefix are
+tracked in git and visible on GitHub.
+
+| Pattern | Visibility | Purpose |
+|---------|------------|---------|
+| `example-*/` | **Public** (tracked) | Example workflows shipped with the project |
+| Everything else | **Private** (gitignored) | Internal, customer-specific, or regulated-domain workflows |
+| `*.html` (root level) | **Private** (gitignored) | Internal demo pages |
 
 ---
 
@@ -15,7 +28,7 @@ then models/tools, then workflows).
 ### Via curl
 
 ```bash
-cd workflows/grammar-fix/
+cd workflows/example-grammar-fix/
 curl -X POST http://localhost:8900/admin/api/import -H "Content-Type: application/json" -d @category.json
 curl -X POST http://localhost:8900/admin/api/import -H "Content-Type: application/json" -d @llm-model.json
 curl -X POST http://localhost:8900/admin/api/import -H "Content-Type: application/json" -d @workflow.json
@@ -35,53 +48,53 @@ entities (no duplicates).
 ```
 workflows/
 ├── README.md
-├── grammar-fix/
+├── example-grammar-fix/
 │   ├── README.md
-│   ├── workflow-rocm.json      ← workflow (ROCm)
+│   ├── workflow-rocm.json     ← workflow (ROCm)
 │   ├── workflow-cuda.json     ← workflow (CUDA)
 │   ├── category.json          ← category "text"
-│   ├── llm-model-rocm.json    ← Ollama-ROCm provider
-│   ├── llm-model-cuda.json    ← Ollama-CUDA provider
+│   ├── llm-model-rocm.json   ← Ollama-ROCm provider
+│   ├── llm-model-cuda.json   ← Ollama-CUDA provider
 │   └── demo.html
-├── speech-to-text/
+├── example-speech-to-text/
 │   ├── README.md
-│   ├── workflow-rocm.json      ← workflow (ROCm)
+│   ├── workflow-rocm.json     ← workflow (ROCm)
 │   ├── workflow-cuda.json     ← workflow (CUDA)
 │   ├── category.json          ← category "voice"
-│   ├── stt-model-rocm.json    ← Whisper-ROCm provider
-│   ├── stt-model-cuda.json    ← Speaches CUDA provider
+│   ├── stt-model-rocm.json   ← Whisper-ROCm provider
+│   ├── stt-model-cuda.json   ← Speaches CUDA provider
 │   └── demo.html
-├── html-to-markdown/
+├── example-html-to-markdown/
 │   ├── README.md
 │   ├── workflow.json
-│   ├── category.json        ← category "text"
-│   ├── tool.json            ← AR plugin
+│   ├── category.json          ← category "text"
+│   ├── tool.json              ← AR plugin
 │   └── demo.html
-├── webpage-to-ebook/
+├── example-webpage-to-ebook/
 │   ├── README.md
 │   ├── workflow.json
-│   ├── category.json        ← category "text"
-│   └── tool.json            ← AR plugin
-├── contact-form-capture/
+│   ├── category.json          ← category "text"
+│   └── tool.json              ← AR plugin
+├── example-contact-form-capture/
 │   ├── README.md
 │   ├── workflow.json
-│   ├── category.json        ← category "automation"
-│   ├── tool.json            ← n8n webhook
-│   ├── n8n-workflow.json    ← n8n flow (import into n8n)
+│   ├── category.json          ← category "automation"
+│   ├── tool.json              ← n8n webhook
+│   ├── n8n-workflow.json      ← n8n flow (import into n8n)
 │   └── demo.html
-├── name-formatter/
+├── example-name-formatter/
 │   ├── README.md
 │   ├── workflow.json
-│   ├── category.json        ← category "automation"
-│   ├── tool.json            ← n8n webhook
-│   ├── n8n-workflow.json    ← n8n flow (import into n8n)
+│   ├── category.json          ← category "automation"
+│   ├── tool.json              ← n8n webhook
+│   ├── n8n-workflow.json      ← n8n flow (import into n8n)
 │   └── demo.html
-└── freight-calculator/
+└── example-freight-calculator/
     ├── README.md
     ├── workflow.json
-    ├── category.json        ← category "automation"
-    ├── tool.json            ← n8n webhook
-    ├── n8n-workflow.json    ← n8n flow (import into n8n)
+    ├── category.json          ← category "automation"
+    ├── tool.json              ← n8n webhook
+    ├── n8n-workflow.json      ← n8n flow (import into n8n)
     └── demo.html
 ```
 
@@ -127,22 +140,22 @@ The example files use default Docker service names (e.g.
 ### text_transformation (LLM)
 
 Uses an LLM model to transform selected text.
-Example: [grammar-fix](grammar-fix/)
+Example: [example-grammar-fix](example-grammar-fix/)
 
 ### speech_to_text (STT)
 
 Records audio and transcribes it using an STT model.
-Example: [speech-to-text](speech-to-text/)
+Example: [example-speech-to-text](example-speech-to-text/)
 
 ### tool (AR plugin)
 
 Calls an Ancroo Runner plugin endpoint.
-Examples: [html-to-markdown](html-to-markdown/), [webpage-to-ebook](webpage-to-ebook/)
+Examples: [example-html-to-markdown](example-html-to-markdown/), [example-webpage-to-ebook](example-webpage-to-ebook/)
 
 ### tool (n8n webhook)
 
 Calls an n8n webhook for custom processing logic.
-Examples: [contact-form-capture](contact-form-capture/), [name-formatter](name-formatter/), [freight-calculator](freight-calculator/)
+Examples: [example-contact-form-capture](example-contact-form-capture/), [example-name-formatter](example-name-formatter/), [example-freight-calculator](example-freight-calculator/)
 
 For n8n workflows, import `n8n-workflow.json` into n8n separately, then set
 the tool's `endpoint_url` to the resulting webhook URL.

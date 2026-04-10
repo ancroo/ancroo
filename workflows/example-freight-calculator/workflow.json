@@ -10,7 +10,7 @@
   "stt_model_name": null,
   "tool_name": "Freight Calculator → Ancroo",
   "output_action": "fill_fields",
-  "demo_url": "freight-calculator/demo.html",
+  "demo_url": "example-freight-calculator/demo.html",
   "timeout_seconds": 60,
   "recipe": {
     "collect": ["form_fields", "page_context"],

@@ -10,7 +10,7 @@
 | `README.md` | Ecosystem documentation (architecture, services, ports) |
 | `ROADMAP.md` | Security maturity roadmap (3 phases) |
 | `SECURITY.md` | Vulnerability reporting policy |
-| `workflows/` | Example workflow definitions (8 workflows) |
+| `workflows/` | Workflow definitions (7 public examples + internal) |
 | `workflows/README.md` | Workflow format documentation |
 | `assets/icons/` | Canonical brand assets (logos, favicons) |
 
@@ -25,18 +25,28 @@ The actual installer (`install.sh`) lives in `ancroo-stack/`.
 
 ## Workflow Definitions
 
-8 example workflows in `workflows/`:
+7 public example workflows + 2 internal workflows in `workflows/`:
+
+**Public (`example-*` prefix, tracked in git):**
 
 | Workflow | Type | Engine |
 |----------|------|--------|
-| `grammar-fix/` | `text_transformation` | LLM (Ollama) |
-| `speech-to-text/` | `speech_to_text` | Whisper/Speaches |
-| `html-to-markdown/` | `tool` | ancroo-runner plugin |
-| `webpage-to-ebook/` | `tool` | ancroo-runner plugin |
-| `contact-form-capture/` | `tool` | n8n webhook |
-| `name-formatter/` | `tool` | n8n webhook |
-| `freight-calculator/` | `tool` | n8n webhook |
+| `example-grammar-fix/` | `text_transformation` | LLM (Ollama) |
+| `example-speech-to-text/` | `speech_to_text` | Whisper/Speaches |
+| `example-html-to-markdown/` | `tool` | ancroo-runner plugin |
+| `example-webpage-to-ebook/` | `tool` | ancroo-runner plugin |
+| `example-contact-form-capture/` | `tool` | n8n webhook |
+| `example-name-formatter/` | `tool` | n8n webhook |
+| `example-freight-calculator/` | `tool` | n8n webhook |
+
+**Internal (no prefix, gitignored):**
+
+| Workflow | Type | Engine |
+|----------|------|--------|
+| `patient-rewrite/` | `text_transformation` | LLM (Ollama) |
 | `patient-registration/` | `tool` | n8n webhook |
+
+**Convention:** Default = private. Only `example-*` directories are tracked in git.
 
 **Entity types:** `category`, `llm_model`, `stt_model`, `tool`, `workflow`
 **Import order:** category → model/tool → workflow (dependency order)

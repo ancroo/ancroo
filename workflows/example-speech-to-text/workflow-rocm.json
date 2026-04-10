@@ -11,7 +11,7 @@
   "tool_name": null,
   "output_action": "clipboard",
   "default_hotkey": "Alt+Shift+R",
-  "demo_url": "speech-to-text/demo.html",
+  "demo_url": "example-speech-to-text/demo.html",
   "timeout_seconds": 60,
   "recipe": {
     "collect": ["audio"],

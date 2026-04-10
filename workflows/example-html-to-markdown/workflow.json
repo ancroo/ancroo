@@ -10,7 +10,7 @@
   "stt_model_name": null,
   "tool_name": "HTML to Markdown Converter",
   "output_action": "clipboard",
-  "demo_url": "html-to-markdown/demo.html",
+  "demo_url": "example-html-to-markdown/demo.html",
   "timeout_seconds": 60,
   "recipe": {
     "collect": ["text_selection"]

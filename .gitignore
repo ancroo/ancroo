@@ -26,5 +26,10 @@ build/
 *.swp
 *~
 
+# Workflows: default private, only example-* are public
+workflows/*/
+!workflows/example-*/
+workflows/*.html
+
 # Claude Code
 .claude/
