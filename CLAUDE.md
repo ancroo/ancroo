@@ -67,6 +67,7 @@ GPU variants: Some workflows have `-rocm` and `-cuda` variants for model definit
 | ancroo-stack | Docker infrastructure | 80 (dashboard) |
 | ancroo-backend | Workflow execution API | 8900 |
 | ancroo-runner | Deterministic script runner | 8510 |
-| ancroo-web | Browser extension | — |
+| ancroo-web | Browser extension (direct LLM mode, Chrome Store) | — |
+| ancroo-web-backend | Browser extension (backend mode, no Chrome Store) | — |
 | ancroo-voice | Desktop STT client | — |
 | ancroo (this) | Docs + workflow definitions | — |

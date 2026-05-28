@@ -62,9 +62,3 @@ These improvements are not tied to a specific phase and will be addressed as nee
 - **CI/CD** — automated builds, tests, releases
 - **Performance** — caching, connection pooling, async processing
 - **New workflows** — community contributions, templates
-
-## Non-goals
-
-- Deadlines or release dates — this is an unpaid side project
-- SaaS / hosted offering
-- Supporting non-Docker deployments
