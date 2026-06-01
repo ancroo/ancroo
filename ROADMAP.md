@@ -6,7 +6,7 @@ Ancroo is a side project under active development. This roadmap describes the se
 
 ### Phase 0 — Functional *(current)*
 
-Everything works, workflows run end-to-end, but there is no encryption or authentication. Intended for trusted local networks only.
+Core features are functional and workflows run on trusted local networks, but this is an early Beta — no encryption, no authentication, and rough edges are expected. Intended for trusted local networks only.
 
 | What's done | Status |
 |-------------|--------|
@@ -16,7 +16,7 @@ Everything works, workflows run end-to-end, but there is no encryption or authen
 | Desktop push-to-talk STT client | Beta |
 | Plugin-based script runner | Beta |
 | Meta-installer (one command setup) | Beta |
-| Example workflows (grammar fix, speech-to-text, form capture) | Working |
+| Example workflows (grammar fix, speech-to-text, form capture) | Beta |
 
 > **Use case:** Home labs, VPNs, local networks, single-user setups.
 

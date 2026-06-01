@@ -68,7 +68,7 @@ bash install.sh
 
 The installer walks you through GPU and STT selection, optionally clones companion projects, and prints a summary with all service URLs and credentials when done.
 
-> **Phase 0 (Beta)** — Core functionality works end-to-end, but the stack runs without encryption or authentication. Intended for local/trusted networks only. See the [Roadmap](ROADMAP.md) for the security path forward.
+> **Phase 0 (Beta)** — Core functionality is in place and usable on trusted local networks, but the stack runs without encryption or authentication and is still under active development. Intended for local/trusted networks only. See the [Roadmap](ROADMAP.md) for the security path forward.
 
 ### Components
 
