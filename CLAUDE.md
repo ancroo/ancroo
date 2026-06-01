@@ -10,7 +10,7 @@
 | `README.md` | Ecosystem documentation (architecture, services, ports) |
 | `ROADMAP.md` | Security maturity roadmap (3 phases) |
 | `SECURITY.md` | Vulnerability reporting policy |
-| `workflows/` | Workflow definitions (7 public examples + internal) |
+| `workflows/` | Workflow definitions (7 public examples) |
 | `workflows/README.md` | Workflow format documentation |
 | `assets/icons/` | Canonical brand assets (logos, favicons) |
 
@@ -25,7 +25,7 @@ The actual installer (`install.sh`) lives in `ancroo-stack/`.
 
 ## Workflow Definitions
 
-7 public example workflows + 2 internal workflows in `workflows/`:
+7 public example workflows in `workflows/`:
 
 **Public (`example-*` prefix, tracked in git):**
 
@@ -39,14 +39,7 @@ The actual installer (`install.sh`) lives in `ancroo-stack/`.
 | `example-name-formatter/` | `tool` | n8n webhook |
 | `example-freight-calculator/` | `tool` | n8n webhook |
 
-**Internal (no prefix, gitignored):**
-
-| Workflow | Type | Engine |
-|----------|------|--------|
-| `patient-rewrite/` | `text_transformation` | LLM (Ollama) |
-| `patient-registration/` | `tool` | n8n webhook |
-
-**Convention:** Default = private. Only `example-*` directories are tracked in git.
+**Convention:** Default = private (gitignored). Only `example-*` directories are tracked in git — drop private/internal workflows in `workflows/<name>/` and they stay local.
 
 **Entity types:** `category`, `llm_model`, `stt_model`, `tool`, `workflow`
 **Import order:** category → model/tool → workflow (dependency order)

@@ -52,7 +52,7 @@ Central identity management. User-scoped data and permissions.
 - Role-based access (admin vs. user)
 - OAuth2 PKCE for the browser extension
 
-> **Status:** SSO module exists and is experimental. Backend has OIDC scaffolding, extension has PKCE flow. Not yet tested as a complete system.
+> **Status:** Not yet available — planned for a future release.
 
 ## What's orthogonal
 

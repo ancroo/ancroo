@@ -7,44 +7,9 @@
 
 ---
 
-## Ancroo Web — AI Workflows in your Browser
+## Ancroo Web — browser-only, no server
 
-[**Install from the Chrome Web Store**](https://chromewebstore.google.com/detail/ancroo/jeaaomlligaaoohplachpimjgopjmfim)
-
-The browser extension calls LLM providers directly — no server or account needed.
-
-```mermaid
-%%{init: {'theme': 'neutral'}}%%
-graph LR
-    subgraph Browser["Browser"]
-        input["Text Selection<br/>Form Data"]
-        extension["Ancroo Web<br/>Browser Extension"]
-    end
-
-    llmapi["LLM APIs<br/>OpenAI / Anthropic<br/>Gemini / Ollama"]
-
-    input <--> extension
-    extension --> llmapi
-
-    style input fill:transparent,stroke:transparent,color:#1e3a5f
-    style extension fill:#fef08a,stroke:#eab308,color:#713f12
-    style llmapi fill:#dbeafe,stroke:#3b82f6,color:#1e3a5f
-```
-
-**Setup in seconds:** Install the extension, add your OpenAI / Anthropic / Gemini / Ollama API key, and start using six built-in workflows immediately — Summarize, Translate, Rewrite, Explain, Fix Grammar, Ask AI.
-
-**Features:**
-- Select text on any page → right-click "Run with Ancroo" → results appear inline
-- Hotkeys trigger workflows instantly from any page
-- Clipboard & page context as input sources
-- Output actions: replace text, copy, insert, or show in panel
-- Local workflow editor — create custom workflows with prompt templates, model selection, input/output configuration
-- Execution history (last 50 results)
-- No server, no account, nothing leaves your network
-
-**LLM providers:** OpenAI, Anthropic, Google Gemini, Ollama (local), OpenRouter, or any OpenAI-compatible endpoint.
-
-Source: [github.com/ancroo/ancroo-web](https://github.com/ancroo/ancroo-web)
+Want just the browser extension without a server? Use **[Ancroo Web](https://github.com/ancroo/ancroo-web)** — install from the [Chrome Web Store](https://chromewebstore.google.com/detail/ancroo/jeaaomlligaaoohplachpimjgopjmfim), add an LLM API key (OpenAI / Anthropic / Gemini / Ollama), and run AI workflows on selected text. No account, nothing leaves your network.
 
 ---
 

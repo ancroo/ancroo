@@ -2,17 +2,21 @@
 
 ## Project Status
 
-Ancroo is in early-stage development. The current release (Phase 1) is designed for **local and trusted network use only**. Do not expose Ancroo services to the public internet without additional security measures.
+Ancroo is in early-stage development. The current release (Phase 0 — Functional)
+is designed for **local and trusted network use only**. Do not expose Ancroo
+services to the public internet without additional security measures.
 
-## Phase 1 Limitations
+The phase numbering here matches the [Roadmap](ROADMAP.md).
+
+## Phase 0 Limitations
 
 The following limitations apply to the current release:
 
 - **No TLS encryption by default** — Services communicate over HTTP on the local network. The SSL module exists but is experimental.
-- **No authentication by default** — The backend runs with `AUTH_ENABLED=false`. All API endpoints are accessible without login.
+- **No authentication** — The backend runs without login (`AUTH_ENABLED=false`); every request is treated as a local admin. SSO/OIDC is not yet available.
 - **No rate limiting** — API endpoints have no rate limiting or request throttling.
 - **No input sanitization for LLM prompts** — User input is passed to LLMs without prompt injection protection.
-- **Default credentials** — Some modules ship with placeholder credentials that must be changed during setup. Never deploy with `CHANGE_ME_*` values.
+- **Default credentials** — Some modules ship with placeholder credentials that must be changed during setup. Never deploy with `CHANGE_ME_*` / `changeme-*` values. (The installer auto-generates real secrets and regenerates placeholder values.)
 - **No audit logging** — Execution logs exist but there is no security audit trail.
 - **Docker socket access** — The stack requires Docker socket access on the host for service discovery.
 
@@ -20,9 +24,10 @@ The following limitations apply to the current release:
 
 | Phase | Features | Status |
 |-------|----------|--------|
-| Phase 1 | Local/trusted network, HTTP, no auth | **Current** |
-| Phase 2 | TLS via Traefik (SSL module) | Experimental |
-| Phase 3 | OIDC authentication (SSO module), rate limiting | Planned |
+| Phase 0 | Local/trusted network, HTTP, no auth | **Current** |
+| Phase 1 | TLS via Traefik (SSL module) | Experimental |
+| Phase 2 | API tokens, rate limiting, input sanitization | Planned |
+| Phase 3 | OIDC authentication (SSO module), multi-user | Experimental / not hardened |
 
 ## Supported Versions
 
