@@ -149,7 +149,7 @@ See [SECURITY.md](SECURITY.md) for the vulnerability reporting policy. To report
 
 ## License
 
-MIT — see [LICENSE](LICENSE). The Ancroo name is not covered by this license and remains the property of the author. Each sub-project has its own license — see the individual repositories.
+MIT — see [LICENSE](LICENSE). The Ancroo name and the anchor logo are not covered by this license and remain the property of the author. Each sub-project has its own license — see the individual repositories.
 
 ---
 
