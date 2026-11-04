@@ -49,3 +49,4 @@ You can expect an initial response within a few days. If the vulnerability is co
 | [ancroo-backend](https://github.com/ancroo/ancroo-backend) | API security, auth configuration |
 | [ancroo-web](https://github.com/ancroo/ancroo-web) | Browser extension permissions, CSP |
 | [ancroo-voice](https://github.com/ancroo/ancroo-voice) | Desktop client, local config files |
+| [ancroo-crew](https://github.com/ancroo/ancroo-crew) | Docker socket, limits of the AI employees, prompt injection — see its [SECURITY.md](https://github.com/ancroo/ancroo-crew/blob/main/SECURITY.md) |

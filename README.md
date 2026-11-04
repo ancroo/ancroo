@@ -120,6 +120,7 @@ Custom workflows can be created via the admin UI or imported from a JSON file â€
 | [**Ancroo Backend**](https://github.com/ancroo/ancroo-backend) | Workflow engine â€” connects the extension to LLMs, STT, and n8n. Ships the example workflow definitions. |
 | [**Ancroo Runner**](https://github.com/ancroo/ancroo-runner) | Deterministic script runner via user-extensible plugins. |
 | [**Ancroo Voice**](https://github.com/ancroo/ancroo-voice) | Desktop push-to-talk STT â€” hold a key, speak, text appears at cursor. |
+| [**Ancroo Crew**](https://github.com/ancroo/ancroo-crew) | A company of AI employees with a web UI and a web chat â€” each employee a folder of text files, each run Claude Code in a short-lived container. Standalone: not part of the stack, installed with its own `./deploy`. |
 
 ## Where to find what
 
@@ -128,6 +129,7 @@ Custom workflows can be created via the admin UI or imported from a JSON file â€
 | Install the stack, service URLs & ports | [ancroo-stack](https://github.com/ancroo/ancroo-stack) |
 | Example workflow definitions & the workflow API | [ancroo-backend](https://github.com/ancroo/ancroo-backend) |
 | Browser extension (no server) | [ancroo-web](https://github.com/ancroo/ancroo-web) |
+| AI employees with a web UI | [ancroo-crew](https://github.com/ancroo/ancroo-crew) |
 | Security maturity plan | [ROADMAP.md](ROADMAP.md) |
 | Third-party software & licenses | [ancroo-stack/NOTICE](https://github.com/ancroo/ancroo-stack/blob/main/NOTICE) |
 
