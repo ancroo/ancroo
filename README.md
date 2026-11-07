@@ -23,7 +23,7 @@ No account, nothing leaves your network.
 
 **Example:** Add your OpenAI or Anthropic key, select a sentence on any page, press a hotkey — the extension calls the LLM directly and replaces the text in place. No server needed.
 
-![Ancroo sidepanel with workflows](assets/ancroo-web-sidepanel.png)
+![Ancroo sidepanel with workflows](assets/screenshots/ancroo-web-sidepanel.png)
 
 → **[Ancroo Web](https://github.com/ancroo/ancroo-web)** · [Chrome Web Store](https://chromewebstore.google.com/detail/ancroo/jeaaomlligaaoohplachpimjgopjmfim)
 
@@ -93,7 +93,7 @@ graph LR
 
 Custom workflows can be created via the admin UI or imported from a JSON file — see [ancroo-backend](https://github.com/ancroo/ancroo-backend) for the full workflow API and more examples.
 
-![Ancroo admin with workflows and sidepanel](ancroo_workflows.png)
+![Ancroo admin with workflows and sidepanel](assets/screenshots/ancroo_workflows.png)
 
 ## Why Ancroo?
 
