@@ -29,6 +29,11 @@ No account, nothing leaves your network.
 
 ## 🟢 The self-hosted stack — full feature set
 
+> **Archived — not actively maintained.** The stack repositories (Stack, Backend,
+> Runner, Voice, Web Backend) are archived on GitHub. They stay available,
+> read-only, as working reference code — use them as they are; no updates or
+> fixes are planned.
+
 For speech-to-text, file uploads, n8n automation, tool plugins, server-managed
 workflows, and (later) multi-user support. One command sets up the Docker stack:
 
@@ -104,23 +109,31 @@ Custom workflows can be created via the admin UI or imported from a JSON file �
 - **GPU-flexible** — works with NVIDIA (CUDA), AMD (ROCm), or CPU-only
 - **One installer** — 3 commands to a running stack with AI chat, workflow engine, and STT
 
-> **Phase 0 (Beta)** — Core functionality is in place and usable on trusted local
-> networks, but the stack runs without encryption or authentication and is still
-> under active development. Intended for local/trusted networks only. See the
-> [Roadmap](ROADMAP.md) for the security path forward.
+> **Phase 0 (Beta), archived** — Core functionality is in place and usable on
+> trusted local networks, but the stack runs without encryption or authentication.
+> Intended for local/trusted networks only. The [Roadmap](ROADMAP.md) describes the
+> security path that was planned; it is not being pursued while the stack is archived.
 
 ---
 
 ## The projects
 
+**Actively developed**
+
 | Project | What it does |
 | ------- | ------------ |
-| [**Ancroo Web Backend**](https://github.com/ancroo/ancroo-web-backend) | Browser extension, **backend** mode — connects to the self-hosted stack for STT, file uploads, n8n, and multi-user. Also supports direct LLM calls. Not on the Chrome Store. |
+| [**Ancroo Web**](https://github.com/ancroo/ancroo-web) | Browser extension, **direct** mode — calls LLM providers directly, no server needed. On the [Chrome Web Store](https://chromewebstore.google.com/detail/ancroo/jeaaomlligaaoohplachpimjgopjmfim). |
+| [**Ancroo Crew**](https://github.com/ancroo/ancroo-crew) | A company of AI employees with a web UI and a web chat — each employee a folder of text files, each run Claude Code in a short-lived container. Standalone: not part of the stack, installed with its own `./deploy`. |
+
+**Archived — the self-hosted stack** (read-only, not actively maintained)
+
+| Project | What it does |
+| ------- | ------------ |
 | [**Ancroo Stack**](https://github.com/ancroo/ancroo-stack) | Self-hosted Docker infrastructure — Ollama, Open WebUI, PostgreSQL, n8n, BookStack, STT. Owns the installer, service URLs, and ports. |
 | [**Ancroo Backend**](https://github.com/ancroo/ancroo-backend) | Workflow engine — connects the extension to LLMs, STT, and n8n. Ships the example workflow definitions. |
 | [**Ancroo Runner**](https://github.com/ancroo/ancroo-runner) | Deterministic script runner via user-extensible plugins. |
 | [**Ancroo Voice**](https://github.com/ancroo/ancroo-voice) | Desktop push-to-talk STT — hold a key, speak, text appears at cursor. |
-| [**Ancroo Crew**](https://github.com/ancroo/ancroo-crew) | A company of AI employees with a web UI and a web chat — each employee a folder of text files, each run Claude Code in a short-lived container. Standalone: not part of the stack, installed with its own `./deploy`. |
+| [**Ancroo Web Backend**](https://github.com/ancroo/ancroo-web-backend) | Browser extension, **backend** mode — connects to the self-hosted stack for STT, file uploads, n8n, and multi-user. Also supports direct LLM calls. Not on the Chrome Store. |
 
 ## Where to find what
 
@@ -137,7 +150,7 @@ Custom workflows can be created via the admin UI or imported from a JSON file �
 
 ## Contributing
 
-Contributions are welcome — open an [issue](https://github.com/ancroo/ancroo/issues) or a pull request in the relevant repository.
+Feedback is welcome — open an [issue](https://github.com/ancroo/ancroo/issues) or an issue in the relevant active repository. The archived stack repositories are read-only and accept no issues or pull requests.
 
 ## Security & Roadmap
 

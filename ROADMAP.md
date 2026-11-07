@@ -1,6 +1,8 @@
 # Roadmap
 
-Ancroo is a side project under active development. This roadmap describes the security maturity path — not a timeline, but a structured direction.
+This roadmap describes the security maturity path that was planned for the self-hosted stack — not a timeline, but a structured direction.
+
+> **On hold:** the stack repositories are archived and not actively maintained, so this roadmap is not being pursued.
 
 ## Phases
 

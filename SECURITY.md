@@ -33,6 +33,8 @@ The following limitations apply to the current release:
 
 Security fixes are applied to the latest version on the `main` branch only. There are no LTS or backport branches.
 
+Only the actively developed projects receive security fixes: **ancroo-web** and **ancroo-crew**. The self-hosted stack repositories (ancroo-stack, ancroo-backend, ancroo-runner, ancroo-voice, ancroo-web-backend) are archived and receive no fixes.
+
 ## Reporting a Vulnerability
 
 Please report security vulnerabilities through [GitHub's private vulnerability reporting](https://github.com/ancroo/ancroo/security/advisories/new).
