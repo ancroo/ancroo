@@ -1,16 +1,24 @@
 # Security Policy
 
-## Project Status
+## Scope
 
-Ancroo is in early-stage development. The current release (Phase 0 — Functional)
-is designed for **local and trusted network use only**. Do not expose Ancroo
-services to the public internet without additional security measures.
+This policy covers the **archived self-hosted stack**: ancroo-stack, ancroo-backend,
+ancroo-runner, ancroo-voice and ancroo-web-backend.
 
-The phase numbering here matches the [Roadmap](ROADMAP.md).
+The active projects have their own security policies:
+
+- [Ancroo Web](https://github.com/ancroo/ancroo-web/blob/main/SECURITY.md)
+- [Ancroo Crew](https://github.com/ancroo/ancroo-crew/blob/main/SECURITY.md)
+
+## Status of the archived stack
+
+The stack's last state is Phase 0 — Functional: designed for **local and trusted
+network use only**. Do not expose its services to the public internet without
+additional security measures. The phase numbering matches the [Roadmap](ROADMAP.md).
 
 ## Phase 0 Limitations
 
-The following limitations apply to the current release:
+The following limitations apply to the archived stack:
 
 - **No TLS encryption by default** — Services communicate over HTTP on the local network. The SSL module exists but is experimental.
 - **No authentication** — The backend runs without login (`AUTH_ENABLED=false`); every request is treated as a local admin. SSO/OIDC is not yet available.
@@ -20,20 +28,19 @@ The following limitations apply to the current release:
 - **No audit logging** — Execution logs exist but there is no security audit trail.
 - **Docker socket access** — The stack requires Docker socket access on the host for service discovery.
 
-## Security Roadmap
+## Security Roadmap (on hold)
 
 | Phase | Features | Status |
 |-------|----------|--------|
-| Phase 0 | Local/trusted network, HTTP, no auth | **Current** |
+| Phase 0 | Local/trusted network, HTTP, no auth | **Last state** |
 | Phase 1 | TLS via Traefik (SSL module) | Experimental |
 | Phase 2 | API tokens, rate limiting, input sanitization | Planned |
 | Phase 3 | OIDC authentication (SSO module), multi-user | Experimental / not hardened |
 
 ## Supported Versions
 
-Security fixes are applied to the latest version on the `main` branch only. There are no LTS or backport branches.
-
-Only the actively developed projects receive security fixes: **ancroo-web** and **ancroo-crew**. The self-hosted stack repositories (ancroo-stack, ancroo-backend, ancroo-runner, ancroo-voice, ancroo-web-backend) are archived and receive no fixes.
+None. The stack repositories are archived and receive no fixes, including security
+fixes.
 
 ## Reporting a Vulnerability
 
@@ -41,7 +48,7 @@ Please report security vulnerabilities through [GitHub's private vulnerability r
 
 Do not open a public issue for security vulnerabilities.
 
-You can expect an initial response within a few days. If the vulnerability is confirmed, a fix will be released as soon as possible.
+You can expect an initial response within a few days. Since the stack is archived, a confirmed vulnerability will not be fixed, but it may be documented here as a known issue.
 
 ## Per-Project Security Notes
 
@@ -49,6 +56,4 @@ You can expect an initial response within a few days. If the vulnerability is co
 |---------|-----------------|
 | [ancroo-stack](https://github.com/ancroo/ancroo-stack) | Network exposure, credentials, firewall — see [Security Guide](https://github.com/ancroo/ancroo-stack/blob/main/docs/security.md) |
 | [ancroo-backend](https://github.com/ancroo/ancroo-backend) | API security, auth configuration |
-| [ancroo-web](https://github.com/ancroo/ancroo-web) | Browser extension permissions, CSP |
 | [ancroo-voice](https://github.com/ancroo/ancroo-voice) | Desktop client, local config files |
-| [ancroo-crew](https://github.com/ancroo/ancroo-crew) | Docker socket, limits of the AI employees, prompt injection — see its [SECURITY.md](https://github.com/ancroo/ancroo-crew/blob/main/SECURITY.md) |

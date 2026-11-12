@@ -1,50 +1,54 @@
 # <img src="assets/icons/icon-48.png" width="30" style="vertical-align: middle"> Ancroo
 
-**Your AI workflows, your infrastructure, your data.**
+**Take routine work off your hands — with AI where it helps.**
 
-Run AI workflows right where you work — select text, trigger a workflow, get
-results in place. Grammar correction, speech-to-text, form automation, and more.
-Bring your own LLM key, or self-host the whole thing.
+Ancroo is the home for projects that start where the work happens — in the browser,
+the calendar, the task list — and make everyday processes lighter. AI is a means here,
+not the point. It began as a self-hosted AI stack ([now archived](#where-it-started)); today
+it holds the projects below, and more will follow.
 
-> **This repo is the umbrella.** It gives the big-picture overview and points you
-> to the right project — it holds no application code. Each piece lives in its own
-> repository under the [ancroo](https://github.com/ancroo) org.
+> **This repo is the umbrella.** It gives the overview and points you to the right
+> project — it holds no application code.
 
 ---
 
-Ancroo is a small ecosystem of focused projects. There are **two ways in** —
-pick the one that matches how much you want to run yourself.
+## Ancroo Web — AI prompts in your browser
 
-## 🟡 Just the browser extension — no server
+**Point. Prompt. Done.** A browser extension: select text or point at a page, run an
+AI prompt, and get the result in place — replace the selection, copy it, or show it in
+the side panel. Bring your own provider (OpenAI, Anthropic, Gemini, OpenRouter, Ollama
+or any OpenAI-compatible endpoint). No server, no account; settings and keys stay in
+your browser, and text goes only to the provider you configure.
 
-The fastest start. Install from the Chrome Web Store, add an LLM API key
-(OpenAI / Anthropic / Gemini / Ollama), and run AI workflows on selected text.
-No account, nothing leaves your network.
+→ **[Ancroo Web](https://github.com/ancroo/ancroo-web)** ·
+[Chrome Web Store](https://chromewebstore.google.com/detail/ancroo/jeaaomlligaaoohplachpimjgopjmfim)
 
-**Example:** Add your OpenAI or Anthropic key, select a sentence on any page, press a hotkey — the extension calls the LLM directly and replaces the text in place. No server needed.
+## Ancroo Crew — a team of AI employees
 
-![Ancroo sidepanel with workflows](assets/screenshots/ancroo-web-sidepanel.png)
+A self-hosted team of AI employees that work together like a company and get better
+on the job. Each employee has a task, a personality and limits; they work in your
+calendar, task list or notes through MCP services, ask each other for help, and learn
+from your corrections. You talk to them in a web UI and chat.
 
-→ **[Ancroo Web](https://github.com/ancroo/ancroo-web)** · [Chrome Web Store](https://chromewebstore.google.com/detail/ancroo/jeaaomlligaaoohplachpimjgopjmfim)
+It runs on a Linux server with Docker and uses Claude by Anthropic for every answer —
+you need a Claude subscription or an Anthropic API key.
 
-## 🟢 The self-hosted stack — full feature set
+→ **[Ancroo Crew](https://github.com/ancroo/ancroo-crew)**
 
-> **Archived — not actively maintained.** The stack repositories (Stack, Backend,
-> Runner, Voice, Web Backend) are archived on GitHub. They stay available,
-> read-only, as working reference code — use them as they are; no updates or
-> fixes are planned.
+---
 
-For speech-to-text, file uploads, n8n automation, tool plugins, server-managed
-workflows, and (later) multi-user support. One command sets up the Docker stack:
+## Where it started
 
-```bash
-git clone https://github.com/ancroo/ancroo-stack.git
-cd ancroo-stack && bash install.sh
-```
+Ancroo began as a self-hosted Docker stack — Ollama, Open WebUI, n8n, speech-to-text —
+with a workflow backend, a script runner, a push-to-talk desktop client and a browser
+extension, all built to work together. Ancroo Web grew out of that extension.
 
-**Example:** Select a paragraph with typos in your browser → press a hotkey → the extension sends the text to your server → Ollama fixes the grammar with a local LLM → the corrected text replaces your selection. Under 3 seconds, fully offline.
+The stack repositories are **archived**: they stay available, read-only, as reference
+code, but receive no updates or fixes.
 
-→ Full install guide, service URLs, and ports: **[Ancroo Stack](https://github.com/ancroo/ancroo-stack)**
+The stack's last state is **Phase 0 (Beta)**: no encryption, no authentication,
+meant for local/trusted networks only. The [Roadmap](ROADMAP.md) describes the
+security path that was planned for it and is on hold.
 
 ```mermaid
 %%{init: {'theme': 'neutral'}}%%
@@ -87,76 +91,28 @@ graph LR
     style stt fill:#fed7aa,stroke:#f97316,color:#7c2d12
 ```
 
-**What the backend can do:** [Ancroo Backend](https://github.com/ancroo/ancroo-backend) is a generic workflow engine — not hardcoded to specific tasks. Example workflows included out of the box:
-
-| Workflow | What it does | Requires |
-| -------- | ------------ | -------- |
-| Grammar & Spelling | Fixes grammar and spelling in selected text | Ollama |
-| Speech to Text | Transcribes audio via push-to-talk | Whisper STT |
-| Contact Form Capture | Captures form fields, triggers n8n automation | n8n |
-| Name Formatter | Extracts name fields, triggers n8n automation | n8n |
-
-Custom workflows can be created via the admin UI or imported from a JSON file — see [ancroo-backend](https://github.com/ancroo/ancroo-backend) for the full workflow API and more examples.
-
-![Ancroo admin with workflows and sidepanel](assets/screenshots/ancroo_workflows.png)
-
-## Why Ancroo?
-
-- **Works where you work** — select text in any browser tab, trigger AI workflows, get results inline — no app-switching, no copy-paste
-- **Any software, any website** — not tied to one editor or platform; if it runs in a browser, Ancroo can help
-- **Your data stays local** — nothing leaves your machine or network
-- **All-in-one** — LLMs, speech-to-text, automation, wiki, dashboard — everything runs out of the box
-- **GPU-flexible** — works with NVIDIA (CUDA), AMD (ROCm), or CPU-only
-- **One installer** — 3 commands to a running stack with AI chat, workflow engine, and STT
-
-> **Phase 0 (Beta), archived** — Core functionality is in place and usable on
-> trusted local networks, but the stack runs without encryption or authentication.
-> Intended for local/trusted networks only. The [Roadmap](ROADMAP.md) describes the
-> security path that was planned; it is not being pursued while the stack is archived.
-
----
-
-## The projects
-
-**Actively developed**
-
 | Project | What it does |
 | ------- | ------------ |
-| [**Ancroo Web**](https://github.com/ancroo/ancroo-web) | Browser extension, **direct** mode — calls LLM providers directly, no server needed. On the [Chrome Web Store](https://chromewebstore.google.com/detail/ancroo/jeaaomlligaaoohplachpimjgopjmfim). |
-| [**Ancroo Crew**](https://github.com/ancroo/ancroo-crew) | A company of AI employees with a web UI and a web chat — each employee a folder of text files, each run Claude Code in a short-lived container. Standalone: not part of the stack, installed with its own `./deploy`. |
-
-**Archived — the self-hosted stack** (read-only, not actively maintained)
-
-| Project | What it does |
-| ------- | ------------ |
-| [**Ancroo Stack**](https://github.com/ancroo/ancroo-stack) | Self-hosted Docker infrastructure — Ollama, Open WebUI, PostgreSQL, n8n, BookStack, STT. Owns the installer, service URLs, and ports. |
-| [**Ancroo Backend**](https://github.com/ancroo/ancroo-backend) | Workflow engine — connects the extension to LLMs, STT, and n8n. Ships the example workflow definitions. |
-| [**Ancroo Runner**](https://github.com/ancroo/ancroo-runner) | Deterministic script runner via user-extensible plugins. |
-| [**Ancroo Voice**](https://github.com/ancroo/ancroo-voice) | Desktop push-to-talk STT — hold a key, speak, text appears at cursor. |
-| [**Ancroo Web Backend**](https://github.com/ancroo/ancroo-web-backend) | Browser extension, **backend** mode — connects to the self-hosted stack for STT, file uploads, n8n, and multi-user. Also supports direct LLM calls. Not on the Chrome Store. |
-
-## Where to find what
-
-| Looking for… | Go to |
-| ------------ | ----- |
-| Install the stack, service URLs & ports | [ancroo-stack](https://github.com/ancroo/ancroo-stack) |
-| Example workflow definitions & the workflow API | [ancroo-backend](https://github.com/ancroo/ancroo-backend) |
-| Browser extension (no server) | [ancroo-web](https://github.com/ancroo/ancroo-web) |
-| AI employees with a web UI | [ancroo-crew](https://github.com/ancroo/ancroo-crew) |
-| Security maturity plan | [ROADMAP.md](ROADMAP.md) |
-| Third-party software & licenses | [ancroo-stack/NOTICE](https://github.com/ancroo/ancroo-stack/blob/main/NOTICE) |
+| [Ancroo Stack](https://github.com/ancroo/ancroo-stack) | Docker infrastructure and installer — Ollama, Open WebUI, PostgreSQL, n8n, BookStack, STT. |
+| [Ancroo Backend](https://github.com/ancroo/ancroo-backend) | Workflow engine connecting the extension to LLMs, STT and n8n; ships example workflows. |
+| [Ancroo Runner](https://github.com/ancroo/ancroo-runner) | Deterministic script runner with user-extensible plugins. |
+| [Ancroo Voice](https://github.com/ancroo/ancroo-voice) | Desktop push-to-talk STT — hold a key, speak, text appears at the cursor. |
+| [Ancroo Web Backend](https://github.com/ancroo/ancroo-web-backend) | Browser extension in backend mode, talking to the stack. Not on the Chrome Web Store. |
 
 ---
 
 ## Contributing
 
-Feedback is welcome — open an [issue](https://github.com/ancroo/ancroo/issues) or an issue in the relevant active repository. The archived stack repositories are read-only and accept no issues or pull requests.
+Feedback is welcome — open an issue in the relevant project, or [here](https://github.com/ancroo/ancroo/issues)
+for anything general. The archived repositories are read-only and accept no issues or
+pull requests.
 
-## Security & Roadmap
+## Security
 
-See the [Roadmap](ROADMAP.md) for the phased security path (encryption → API protection → SSO/multi-user).
-
-See [SECURITY.md](SECURITY.md) for the vulnerability reporting policy. To report a vulnerability, please use [GitHub's private vulnerability reporting](https://github.com/ancroo/ancroo/security/advisories/new) instead of opening a public issue.
+Each active project has its own security policy:
+[Ancroo Web](https://github.com/ancroo/ancroo-web/blob/main/SECURITY.md) ·
+[Ancroo Crew](https://github.com/ancroo/ancroo-crew/blob/main/SECURITY.md).
+[SECURITY.md](SECURITY.md) in this repo covers the archived stack.
 
 ## Author
 
@@ -164,7 +120,9 @@ See [SECURITY.md](SECURITY.md) for the vulnerability reporting policy. To report
 
 ## License
 
-MIT — see [LICENSE](LICENSE). The Ancroo name and the anchor logo are not covered by this license and remain the property of the author. Each sub-project has its own license — see the individual repositories.
+MIT — see [LICENSE](LICENSE). The Ancroo name and the anchor logo are not covered by
+this license and remain the property of the author. Each project has its own license —
+see the individual repositories.
 
 ---
 
